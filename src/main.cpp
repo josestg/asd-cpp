@@ -1,17 +1,20 @@
-#include "array/array.h"
+#include "array/dynamicarray.h"
+
 #include <iostream>
 
 int main()
 {
-    Array *arr = arrays::make(5);
+    DynamicArray *darr = dynamic_array::make(1);
 
-    arrays::set(arr, 0, 1);
-    arrays::set(arr, 1, 3);
-    arrays::set(arr, 2, 4);
-    arrays::set(arr, 3, 4);
+    dynamic_array::add(darr, 1);
+    dynamic_array::add(darr, 1);
+    dynamic_array::add(darr, 2);
+    dynamic_array::add(darr, 3);
+    dynamic_array::add(darr, 4);
 
-    std::cout << arrays::str(arr) << std::endl;
-    arrays::del(arr);
+    std::cout << dynamic_array::len(darr) << std::endl;
+    std::cout << dynamic_array::cap(darr) << std::endl;
+    std::cout << dynamic_array::str(darr) << std::endl;
 
     return 0;
 }
